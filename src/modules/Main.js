@@ -1,4 +1,5 @@
 import React from "react"
+import ToDoItem from "./ToDoItem"
 
 const Main = () => {
     const GreenBlue = 'Green or Blue!';
@@ -9,10 +10,10 @@ const Main = () => {
     return (
         <ul>
             <div>Today is {date.toTimeString()}</div>
-            <div style={one_style}><input type="checkbox"/> {`${GreenBlue}`} </div>
-            <div><input type="checkbox"/> Placeholder</div>
-            <div><input type="checkbox"/> Placeholder</div>
-            <div><input type="checkbox"/> Placeholder</div>
+            <div style={one_style}> {`${GreenBlue}`} </div>
+            <ToDoItem name="one"/>
+            <ToDoItem name="two"/>
+            <ToDoItem name="three"/>
         </ul>
     )
 
