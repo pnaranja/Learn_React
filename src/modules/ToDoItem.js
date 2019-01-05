@@ -16,7 +16,7 @@ const mydiv = {
 
 const ToDoItem = (props) => (
     <div style={mydiv}>
-        <input type="checkbox"/> <p>{props.name}</p>
+        <input type="checkbox" id={props.id} checked={props.completed}/> <p>{props.text}</p>
     </div>
 )
 
