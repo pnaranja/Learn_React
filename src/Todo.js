@@ -26,14 +26,22 @@ const MyStyle = styled.section`
     padding: 30px;
 `
 
-const Todo = () =>(
-    <div>
-        <Header/>
-        <MyStyle>
-            <Main/>
-        </MyStyle>
-        <Footer/>
-    </div>
-)
+class Todo extends React.Component {
+    constructor() {
+        super()
+    }
+
+    render() {
+        return (
+            <div>
+                <Header/>
+                <MyStyle>
+                    <Main/>
+                </MyStyle>
+                <Footer/>
+            </div>
+        )
+    }
+}
 
 export default Todo

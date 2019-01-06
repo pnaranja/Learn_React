@@ -1,24 +1,32 @@
 import React from "react"
 import ToDoItem from "./ToDoItem"
-import TodoData from "./TodoData"
+import todoData from "./TodoData"
 
-const Main = () => {
-    const GreenBlue = 'Green or Blue!';
-    const date = new Date();
+class Main extends React.Component {
+    GreenBlue = 'Green or Blue!';
+    date = new Date();
 
-    const one_style = date.getSeconds() <= 30 ? {color: '#0000FF'} : {color: '#008000'}
+    one_style = this.date.getSeconds() <= 30 ? {color: '#0000FF'} : {color: '#008000'}
 
-    const ToDoItems =
-        TodoData.map((item) => <ToDoItem id={item.id} text={item.text} completed={item.completed}/>)
+    constructor() {
+        super()
+        let ToDoItems =
+            todoData.map((item) => <ToDoItem id={item.id} text={item.text} completed={item.completed}/>)
 
-    return (
-        <ul>
-            <div>Today is {date.toTimeString()}</div>
-            <div style={one_style}> {`${GreenBlue}`} </div>
-            {ToDoItems}
-        </ul>
-    )
+        this.state = {'todoItems': ToDoItems}
 
-};
+    }
+
+    render() {
+        return (
+            <ul>
+                <div>Today is {this.date.toTimeString()}</div>
+                <div style={this.one_style}> {`${this.GreenBlue}`} </div>
+                {this.state.todoItems}
+            </ul>
+
+        )
+    }
+}
 
 export default Main
