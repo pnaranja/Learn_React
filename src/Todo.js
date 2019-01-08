@@ -27,9 +27,6 @@ const MyStyle = styled.section`
 `
 
 class Todo extends React.Component {
-    constructor() {
-        super()
-    }
 
     render() {
         return (
