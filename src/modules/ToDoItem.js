@@ -22,7 +22,10 @@ class ToDoItem extends React.Component {
     }
 
     DoneNotDone() {
-        this.setState({"completed": !this.state.completed})
+        // this.setState({"completed": !this.state.completed})
+        this.setState((prevState) => {
+            return {"completed": !prevState.completed}
+        })
     }
 
     render(props) {
