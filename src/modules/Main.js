@@ -33,7 +33,6 @@ class Main extends React.Component {
             const newToDoItems = prevState.todoItems.map(item => this.handleToDoItem(item, id))
             return {'todoItems': newToDoItems}
         })
-        console.log(this.state.todoItems)
 
     }
 
