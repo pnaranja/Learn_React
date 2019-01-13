@@ -17,15 +17,7 @@ const mydiv = {
 class ToDoItem extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {"completed": this.props.completed}
         this.text_state = {false: <p>{this.props.text}</p>, true: <p><s>{this.props.text}</s></p>}
-    }
-
-    DoneNotDone() {
-        // this.setState({"completed": !this.state.completed})
-        this.setState((prevState) => {
-            return {"completed": !prevState.completed}
-        })
     }
 
     render(props) {
@@ -33,9 +25,9 @@ class ToDoItem extends React.Component {
             <div style={mydiv}>
                 <input type="checkbox"
                        id={this.props.id}
-                       checked={this.state.completed}
-                       onClick={() => this.DoneNotDone()}
-                /> {this.text_state[this.state.completed]}
+                       checked={this.props.completed}
+                       onClick={() => this.props.handleChange(this.props.id)}
+                /> {this.text_state[this.props.completed]}
             </div>
         )
     }
