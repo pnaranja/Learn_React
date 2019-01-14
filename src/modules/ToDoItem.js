@@ -14,23 +14,18 @@ const mydiv = {
 }
 
 
-class ToDoItem extends React.Component {
-    constructor(props) {
-        super(props)
-        this.text_state = {false: <p>{this.props.text}</p>, true: <p><s>{this.props.text}</s></p>}
-    }
+const ToDoItem = (props) => {
+    const text_state = {false: <p>{props.text}</p>, true: <p><s>{props.text}</s></p>}
+    return (
+        <div style={mydiv}>
+            <input type="checkbox"
+                   id={props.id}
+                   checked={props.completed}
+                   onClick={() => props.handleChange(props.id)}
+            /> {text_state[props.completed]}
+        </div>
+    )
 
-    render(props) {
-        return (
-            <div style={mydiv}>
-                <input type="checkbox"
-                       id={this.props.id}
-                       checked={this.props.completed}
-                       onClick={() => this.props.handleChange(this.props.id)}
-                /> {this.text_state[this.props.completed]}
-            </div>
-        )
-    }
 }
 
 export default ToDoItem
